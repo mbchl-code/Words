@@ -1,3 +1,6 @@
+from words_checking import points_in_step
+from lab import get_base_word
+
 def inp_numb_of_players():
     while True:
         numb_players = input("Введите число от 2 до 4: ")
@@ -15,15 +18,29 @@ def inp_numb_of_players():
     return numb_players
 
 def game(numb_players):
+    word = get_base_word()
+    used_words =[]
+    point_count = [0,0,0,0]
     counter_pass = 0
     word_curr = ''
+    print("Исходное слово:", word)
     while counter_pass < int(numb_players):
         counter_pass = 0
         for i in range(1, int(numb_players) + 1):
-            word_curr = input()
+            print('Ход игрока: ', i)
+            word_curr = input().upper()
+
             if word_curr == '':
                 print('Игрок', i, 'пропустил ход')
                 counter_pass += 1
-            elif ...:
+            else:
 
+                if(word_curr in used_words):
+                    print('Слово уже было')
+                    point_count[i - 1] -= len(word_curr)
+                else:
+                    used_words.append(word_curr)
+                    point_count[i-1] += points_in_step(word_curr, word)
+                print('Количество очков игрока ', i,': ', point_count[i-1])
+    print('Победил игрок', point_count.index((max(point_count)))+1, ' количество очков:', max(point_count))
 
