@@ -17,6 +17,7 @@ def inp_numb_of_players():
 
     return numb_players
 
+#Переделать конец игры
 def game(numb_players):
     word = get_base_word()
     used_words =[]
