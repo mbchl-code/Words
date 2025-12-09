@@ -11,7 +11,6 @@ def inp_numb_of_players():
             else:
                 print("Ошибка: Число игроков должно быть от 2-х до 4-х")
 
-
     return numb_players
 
 def game(numb_players):
