@@ -36,7 +36,7 @@ def game(numb_players):
             else:
 
                 if(word_curr in used_words):
-                    print('Слово уже было')
+                    print('Это слово уже было')
                     point_count[i - 1] -= len(word_curr)
                 else:
                     used_words.append(word_curr)
